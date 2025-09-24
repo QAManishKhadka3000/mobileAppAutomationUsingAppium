@@ -1,1 +1,2 @@
-HomeTest.class
+tests\CompleteNavigationTest.class
+tests\HomeScreenTest.class

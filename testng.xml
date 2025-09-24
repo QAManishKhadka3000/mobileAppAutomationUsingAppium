@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="MobileAutomationSuite">
-    <test name="AndroidTest">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Mobile Automation Suite" verbose="1">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+        <listener class-name="utils.AllureTestListener"/>
+    </listeners>
+    
+    <test name="Home Screen Verification Tests">
         <classes>
-            <class name="appium.tests"/>
+            <class name="tests.HomeScreenTest">
+                <methods>
+                    <include name="testHomeScreenLoadsSuccessfully"/>
+                    <include name="testBasicNavigation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Complete Navigation Test">
+        <classes>
+            <class name="tests.CompleteNavigationTest"/>
         </classes>
     </test>
 </suite>

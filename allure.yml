@@ -1,0 +1,5 @@
+# allure.yml
+allure:
+  report:
+    language: en
+  directory: target/allure-results

@@ -1,2 +1,8 @@
-base\AppiumBase.class
+base\BasePage.class
+base\BaseTest.class
+utils\TestListener.class
 pages\HomePage.class
+utils\WaitHelper.class
+config\ConfigManager.class
+pages\AccessibilityPage.class
+base\DriverManager.class
