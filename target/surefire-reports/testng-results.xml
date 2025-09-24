@@ -1,33 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-24T15:46:28 NPT" name="Mobile Automation Suite" finished-at="2025-09-24T15:47:19 NPT" duration-ms="50614">
+  <suite started-at="2025-09-24T16:12:07 NPT" name="Mobile Automation Suite" finished-at="2025-09-24T16:14:33 NPT" duration-ms="146203">
     <groups>
     </groups>
-    <test started-at="2025-09-24T15:46:28 NPT" name="Basic Home Screen Test" finished-at="2025-09-24T15:47:19 NPT" duration-ms="50614">
+    <test started-at="2025-09-24T16:12:07 NPT" name="Home Screen Verification Tests" finished-at="2025-09-24T16:13:04 NPT" duration-ms="57079">
       <class name="tests.HomeScreenTest">
-        <test-method is-config="true" signature="globalSetup()[pri:0, instance:tests.HomeScreenTest@73a1e9a9]" started-at="2025-09-24T15:46:28 NPT" name="globalSetup" finished-at="2025-09-24T15:47:02 NPT" duration-ms="33742" status="PASS">
+        <test-method is-config="true" signature="globalSetup()[pri:0, instance:tests.HomeScreenTest@4e93dcb9]" started-at="2025-09-24T16:12:07 NPT" name="globalSetup" finished-at="2025-09-24T16:12:50 NPT" duration-ms="43481" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- globalSetup -->
-        <test-method is-config="true" signature="testSetup()[pri:0, instance:tests.HomeScreenTest@73a1e9a9]" started-at="2025-09-24T15:47:02 NPT" name="testSetup" finished-at="2025-09-24T15:47:02 NPT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="testSetup()[pri:0, instance:tests.HomeScreenTest@4e93dcb9]" started-at="2025-09-24T16:12:50 NPT" name="testSetup" finished-at="2025-09-24T16:12:50 NPT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetup -->
-        <test-method signature="testHomeScreenLoadsSuccessfully()[pri:1, instance:tests.HomeScreenTest@73a1e9a9]" started-at="2025-09-24T15:47:02 NPT" name="testHomeScreenLoadsSuccessfully" finished-at="2025-09-24T15:47:08 NPT" duration-ms="6163" status="PASS">
+        <test-method signature="testHomeScreenLoadsSuccessfully()[pri:1, instance:tests.HomeScreenTest@4e93dcb9]" started-at="2025-09-24T16:12:51 NPT" name="testHomeScreenLoadsSuccessfully" finished-at="2025-09-24T16:13:00 NPT" duration-ms="8945" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHomeScreenLoadsSuccessfully -->
-        <test-method is-config="true" signature="testTeardown()[pri:0, instance:tests.HomeScreenTest@73a1e9a9]" started-at="2025-09-24T15:47:08 NPT" name="testTeardown" finished-at="2025-09-24T15:47:08 NPT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="testTeardown()[pri:0, instance:tests.HomeScreenTest@4e93dcb9]" started-at="2025-09-24T16:13:01 NPT" name="testTeardown" finished-at="2025-09-24T16:13:01 NPT" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTeardown -->
-        <test-method is-config="true" signature="globalTeardown()[pri:0, instance:tests.HomeScreenTest@73a1e9a9]" started-at="2025-09-24T15:47:08 NPT" name="globalTeardown" finished-at="2025-09-24T15:47:19 NPT" duration-ms="10597" status="PASS">
+        <test-method is-config="true" signature="globalTeardown()[pri:0, instance:tests.HomeScreenTest@4e93dcb9]" started-at="2025-09-24T16:13:01 NPT" name="globalTeardown" finished-at="2025-09-24T16:13:04 NPT" duration-ms="2311" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- globalTeardown -->
       </class> <!-- tests.HomeScreenTest -->
-    </test> <!-- Basic Home Screen Test -->
+    </test> <!-- Home Screen Verification Tests -->
+    <test started-at="2025-09-24T16:13:04 NPT" name="Complete Navigation Test" finished-at="2025-09-24T16:14:33 NPT" duration-ms="89059">
+      <class name="tests.CompleteNavigationTest">
+        <test-method is-config="true" signature="globalSetup()[pri:0, instance:tests.CompleteNavigationTest@702c436b]" started-at="2025-09-24T16:13:04 NPT" name="globalSetup" finished-at="2025-09-24T16:13:24 NPT" duration-ms="20638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalSetup -->
+        <test-method is-config="true" signature="testSetup()[pri:0, instance:tests.CompleteNavigationTest@702c436b]" started-at="2025-09-24T16:13:24 NPT" name="testSetup" finished-at="2025-09-24T16:13:24 NPT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetup -->
+        <test-method signature="testCompleteAppNavigation()[pri:0, instance:tests.CompleteNavigationTest@702c436b]" started-at="2025-09-24T16:13:24 NPT" name="testCompleteAppNavigation" finished-at="2025-09-24T16:14:28 NPT" duration-ms="64104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCompleteAppNavigation -->
+        <test-method is-config="true" signature="testTeardown()[pri:0, instance:tests.CompleteNavigationTest@702c436b]" started-at="2025-09-24T16:14:30 NPT" name="testTeardown" finished-at="2025-09-24T16:14:30 NPT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTeardown -->
+        <test-method is-config="true" signature="globalTeardown()[pri:0, instance:tests.CompleteNavigationTest@702c436b]" started-at="2025-09-24T16:14:30 NPT" name="globalTeardown" finished-at="2025-09-24T16:14:33 NPT" duration-ms="3082" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- globalTeardown -->
+      </class> <!-- tests.CompleteNavigationTest -->
+    </test> <!-- Complete Navigation Test -->
   </suite> <!-- Mobile Automation Suite -->
 </testng-results>

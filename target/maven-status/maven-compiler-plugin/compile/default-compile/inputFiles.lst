@@ -4,5 +4,6 @@ D:\Mobile_automation\MobileAppAutomationUsingAppium\src\main\java\base\DriverMan
 D:\Mobile_automation\MobileAppAutomationUsingAppium\src\main\java\config\ConfigManager.java
 D:\Mobile_automation\MobileAppAutomationUsingAppium\src\main\java\pages\AccessibilityPage.java
 D:\Mobile_automation\MobileAppAutomationUsingAppium\src\main\java\pages\HomePage.java
+D:\Mobile_automation\MobileAppAutomationUsingAppium\src\main\java\utils\AllureTestListener.java
 D:\Mobile_automation\MobileAppAutomationUsingAppium\src\main\java\utils\TestListener.java
 D:\Mobile_automation\MobileAppAutomationUsingAppium\src\main\java\utils\WaitHelper.java

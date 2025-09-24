@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class HomePage extends BasePage {
     
@@ -219,7 +220,7 @@ public class HomePage extends BasePage {
         return menuItems.stream()
                 .filter(WebElement::isDisplayed)
                 .map(WebElement::getText)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Step("Verify specific menu items are present")
@@ -235,8 +236,73 @@ public class HomePage extends BasePage {
     @Step("Scroll to menu item: {menuItemName}")
     public void scrollToMenuItem(String menuItemName) {
         logInfo("Scrolling to menu item: " + menuItemName);
-        // Simple scroll implementation - you might want to enhance this
-        driver.findElementByAndroidUIAutomator(
-            "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + menuItemName + "\"))");
+        try {
+            // Simple scroll using JavaScript (alternative approach)
+            driver.executeScript("mobile: scroll", 
+                java.util.Map.of("strategy", "accessibility id", "selector", menuItemName));
+            
+            logInfo("Successfully scrolled to: " + menuItemName);
+        } catch (Exception e) {
+            logError("Failed to scroll to menu item: " + menuItemName + " - " + e.getMessage());
+            // Fallback: try simple swipe
+            performSimpleSwipe();
+        }
+    }
+
+    @Step("Perform simple swipe gesture")
+    private void performSimpleSwipe() {
+        try {
+            // Get screen dimensions
+            var size = driver.manage().window().getSize();
+            int startX = size.width / 2;
+            int startY = (int) (size.height * 0.8);
+            int endY = (int) (size.height * 0.2);
+
+            // Perform swipe
+            driver.executeScript("mobile: swipe", java.util.Map.of(
+                "startX", startX, "startY", startY,
+                "endX", startX, "endY", endY,
+                "duration", 1000
+            ));
+            logInfo("Swipe gesture performed successfully");
+        } catch (Exception e) {
+            logError("Swipe gesture failed: " + e.getMessage());
+        }
+    }
+
+    @Step("Wait for menu item to be visible: {menuItemName}")
+    public void waitForMenuItem(String menuItemName, int timeoutInSeconds) {
+        logInfo("Waiting for menu item: " + menuItemName);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//android.widget.TextView[@text='" + menuItemName + "' or @content-desc='" + menuItemName + "']")));
+            logInfo("Menu item is now visible: " + menuItemName);
+        } catch (Exception e) {
+            logError("Menu item not visible within " + timeoutInSeconds + " seconds: " + menuItemName);
+        }
+    }
+
+    @Step("Get menu item content description")
+    public String getMenuItemContentDesc(String menuItemName) {
+        try {
+            WebElement menuItem = driver.findElement(By.xpath(
+                "//android.widget.TextView[@text='" + menuItemName + "' or @content-desc='" + menuItemName + "']"));
+            String contentDesc = menuItem.getAttribute("content-desc");
+            logInfo("Content description for '" + menuItemName + "': " + contentDesc);
+            return contentDesc;
+        } catch (Exception e) {
+            logError("Failed to get content description for: " + menuItemName);
+            return null;
+        }
+    }
+
+    @Step("Check if home screen is displayed")
+    public boolean isHomeScreenDisplayed() {
+        try {
+            return screenTitle.isDisplayed() && screenTitle.getText().equals("API Demos");
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
